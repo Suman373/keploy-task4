@@ -18,15 +18,15 @@
             <form id="add_form">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <input id="book_title" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
                   </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Link</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <input id="book_link" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
                   </div>
 
-                  <button type="submit" class="btn btn-dark">
+                  <button type="submit" class="btn btn-dark" id="add_book_btn">
                     Add
                 </button>
             </form>
@@ -43,6 +43,9 @@
             </ul>
         </div>
     </div>
-    
+    <footer>
+        &copy; 2023 Made by Suman Roy 
+    </footer>
+    <script src="./script.js"></script>
 </body>
 </html>

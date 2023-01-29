@@ -4,6 +4,7 @@ const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', true);
+const ebookRoute = require('./routes/EbookRoute');
 const PORT = process.env.PORT || 5000;
 
 // middlewares
@@ -12,9 +13,13 @@ app.use(express.urlencoded({limit:'30mb', extended:true}));
 app.use(cors());
 
 // routes
+// initial
 app.get('/', (req,res)=>{
     res.send("Welcome to keploy task4 api");
-})
+});
+//ebooks
+app.route('/ebooks/', ebookRoute);
+
 
 
 
