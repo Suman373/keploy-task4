@@ -4,3 +4,5 @@ const {getAllEbooks, addEbook} = require('../controller/EbookController');
 
 router.get('/' , getAllEbooks);
 router.post('/', addEbook);
+
+module.exports = router;

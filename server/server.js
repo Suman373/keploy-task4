@@ -18,7 +18,7 @@ app.get('/', (req,res)=>{
     res.send("Welcome to keploy task4 api");
 });
 //ebooks
-app.route('/ebooks/', ebookRoute);
+app.use('/ebooks', ebookRoute);
 
 
 
