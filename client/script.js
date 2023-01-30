@@ -40,14 +40,33 @@ const fetchEbooks = async()=>{
     renderEbookList();
 }
 
+const addNewEbook = async(bkTitle, bkLink)=>{
+    console.log(bkTitle, bkLink);
+    // handle submission using rest api
+    await fetch(`${API_ENDPOINT}/ebooks`,{
+        method:'POST',
+        headers:{
+            'content-type':'application/json'
+        },
+        body: JSON.stringify({
+            title:bkTitle,
+            link:bkLink
+        })
+    }).then(res=>res.json())
+    .then(res=> {
+        alert(res.message);
+        setTimeout(()=>{
+            location.reload();
+        },2000);
+    })
+    .catch(err=> console.log(err));
+
+}
 
 window.addEventListener('load', ()=>{
     fetchEbooks();
 })
 
 
-const addNewEbook = async(bkTitle, bkLink)=>{
-    console.log(bkTitle, bkLink);
-    // handle submission using rest api
-}
+
 
