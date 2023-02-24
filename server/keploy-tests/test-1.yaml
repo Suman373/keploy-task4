@@ -1,0 +1,50 @@
+version: api.keploy.io/v1beta2
+kind: Http
+name: test-1
+spec:
+    metadata: {}
+    req:
+        method: GET
+        proto_major: 0
+        proto_minor: 0
+        url: /ebooks/
+        header:
+            accept: '*/*'
+            accept-encoding: gzip, deflate, br
+            connection: close
+            content-length: "2"
+            cookie: accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjI2MmY5NzdiZjhmNzkzNjA0YjY5MSIsImlhdCI6MTY3NjgyOTQzMywiZXhwIjoxNjc2OTE1ODMzfQ.biKrmRvMG8N6eebyLIp7io6E4qawgvjqm_4eBPDqwTM
+            host: localhost:5000
+            user-agent: Thunder Client (https://www.thunderclient.com)
+        body: '{}'
+        body_type: utf-8
+    resp:
+        status_code: 200
+        header:
+            access-control-allow-origin: '*'
+            content-length: "835"
+            content-type: application/json; charset=utf-8
+            etag: W/"343-C61kY0a1JS+j+QwEi4mHMo4c8qc"
+            x-powered-by: Express
+        body: '[{"_id":"63d762505901e9dfe16237ab","title":"Game of thrones","link":"https://google.com","createdAt":"2023-01-30T06:23:12.514Z","updatedAt":"2023-01-30T06:23:12.514Z","__v":0},{"_id":"63d765a435641630271a3e45","title":"Learn React Native","link":"https://react native","createdAt":"2023-01-30T06:37:24.542Z","updatedAt":"2023-01-30T06:37:24.542Z","__v":0},{"_id":"63d7aca735641630271a3e8c","title":"asas","link":"asas","createdAt":"2023-01-30T11:40:23.610Z","updatedAt":"2023-01-30T11:40:23.610Z","__v":0},{"_id":"63d7acc135641630271a3e92","title":"sasaa","link":"asasa","createdAt":"2023-01-30T11:40:49.870Z","updatedAt":"2023-01-30T11:40:49.870Z","__v":0},{"_id":"63dbe2666be5328880aa0e51","title":"Learn Next js","link":"https://www.nextjs.org","createdAt":"2023-02-02T16:18:46.315Z","updatedAt":"2023-02-02T16:18:46.315Z","__v":0}]'
+        body_type: utf-8
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+    objects:
+        - type: error
+          data: H4sIAAAAAAAA/wEAAP//AAAAAAAAAAA=
+    assertions:
+        noise:
+            - header.content-type
+            - body.__v
+            - body._id
+            - body.title
+            - body.link
+            - body.createdAt
+            - body.updatedAt
+            - header.etag
+            - header.x-powered-by
+            - header.access-control-allow-origin
+            - header.content-length
+    created: 1677241857039

@@ -1,3 +1,4 @@
+require("typescript-sdk/dist/integrations/express/register");
 const express = require('express');
 require('dotenv').config();
 const app = express();

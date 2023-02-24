@@ -1,0 +1,46 @@
+version: api.keploy.io/v1beta2
+kind: Http
+name: test-3
+spec:
+    metadata: {}
+    req:
+        method: POST
+        proto_major: 0
+        proto_minor: 0
+        url: /ebooks/
+        header:
+            accept: '*/*'
+            accept-encoding: gzip, deflate, br
+            connection: close
+            content-length: "52"
+            content-type: application/json
+            cookie: accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjI2MmY5NzdiZjhmNzkzNjA0YjY5MSIsImlhdCI6MTY3NjgyOTQzMywiZXhwIjoxNjc2OTE1ODMzfQ.biKrmRvMG8N6eebyLIp7io6E4qawgvjqm_4eBPDqwTM
+            host: localhost:5000
+            user-agent: Thunder Client (https://www.thunderclient.com)
+        body: '{"title":"Learn DEVOPS","link":"https://google.com"}'
+        body_type: utf-8
+    resp:
+        status_code: 400
+        header:
+            access-control-allow-origin: '*'
+            content-length: "35"
+            content-type: application/json; charset=utf-8
+            etag: W/"23-B/oab9WCxBzoRsyXTKOVuJsch2g"
+            x-powered-by: Express
+        body: '{"message":"Ebook already exists!"}'
+        body_type: utf-8
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+    objects:
+        - type: error
+          data: H4sIAAAAAAAA/wEAAP//AAAAAAAAAAA=
+    assertions:
+        noise:
+            - header.content-type
+            - header.etag
+            - body.message
+            - header.x-powered-by
+            - header.access-control-allow-origin
+            - header.content-length
+    created: 1677242078085
